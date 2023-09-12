@@ -1,7 +1,8 @@
 FROM python:3.11
 EXPOSE 5000
 WORKDIR /app
-RUN pip install flask
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 # copy from current floder to current docker foldr, i.e the WORKDIR
 COPY . .
 # a list, each part is part of the command
